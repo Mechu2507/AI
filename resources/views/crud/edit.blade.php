@@ -10,8 +10,11 @@
                 @csrf
                 <div class="form-group mb-2">
                     <label for="type">Typ</label>
-                    <input id="type" name="type" type="text" class="form-control @error('id_type') is-invalid @enderror"
-                        value="{{ $movie->id_type }}">
+                    <select id="type" name="type" class="form-control @error('id_type') is-invalid @enderror">
+                        @foreach ($types as $type)
+                            <option value="{{$type->id}}">{{$type->type}}</option>
+                        @endforeach
+                    </select>
                     @error('type')
                         <div class="invalid-feedback">
                             {{ $message }}
@@ -32,8 +35,8 @@
 
                 <div class="form-group mb-2">
                     <label for="description">Opis</label>
-                    <input id="description" name="description" type="text"
-                        class="form-control @error('description') is-invalid @enderror" value="{{ $movie->description }}">
+                    <textarea id="description" name="description" type="text"
+                        class="form-control @error('description') is-invalid @enderror" value="{{ $movie->description }}"> {{ $movie->description }} </textarea>
                     @error('description')
                         <div class="invalid-feedback">
                             {{ $message }}

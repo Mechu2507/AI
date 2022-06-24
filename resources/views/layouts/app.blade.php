@@ -10,6 +10,8 @@
 
     <title>{{ config('app.name', 'VOD') }}</title>
 
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
     <style>@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');body {    font-family: 'Rubik', sans-serif;}</style>
 
   </head>
@@ -17,7 +19,7 @@
     <div class="container-fluid bg-dark">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     
-    <div class="container">
+    <div class="container ">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="{{ url('/') }}">{{ config('app.name', 'VOD') }}</a>
@@ -73,7 +75,9 @@
     
     @yield('content')
 
-    <div class="container-fluid bg-dark">
+    <br><br>
+
+    <div class="container-fluid bg-dark fixed-bottom">
         <p class="text-center text-white">&copy; VOD – 2022</p>
     </div>
     </div>

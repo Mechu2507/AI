@@ -82,10 +82,11 @@ class CrudController extends Controller
         if(Auth::user()->id_role != 1){ 
             abort(403);
         }
-
+        
         $movie = Movie::findOrFail($id);
+        $types = Type::all();
 
-        return view('crud.edit', compact('movie'));
+        return view('crud.edit', compact('movie', 'types'));
     }
 
     /**
